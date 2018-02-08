@@ -13,6 +13,7 @@
 		- [for循环](#for循环)
 		- [while循环](#while循环)  
 		- [break 和continue](break和continue)
+	- [数组](#数组)
 - [awk内置字符串函数](#awk内置字符串函数)
 
 ## linux之awk命令简介
