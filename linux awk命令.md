@@ -1,22 +1,21 @@
 # linux awk
 
-
-- [linux awk命令简介](#linux awk命令简介)
+- [linux之awk命令简介](#linux之awk命令简介)
 	- [语法](#语法)
 	- [参数选项说明](#参数选项说明)
 - [基本用法](#基本用法)
 - [运算符](#运算符)
 - [内建变量](#内建变量)
-- [awk脚本](#awk脚本)
-- [awk 的if、循环和数组](#awk 的if、循环和数组)
+- [awk脚本](#awk脚本)  
+- [awk的if、循环和数组](#awk的if、循环和数组)
 	- [条件语句](#条件语句)
 	- [循环结构](#循环结构)
 		- [for循环](#for循环)
-		- [while循环](#while循环)
-		- [break 和 continue](#break 和 continue)
+		- [while循环](#while循环)  
+		- [break 和continue](break和continue)
 - [awk内置字符串函数](#awk内置字符串函数)
 
-## linux awk命令简介
+## linux之awk命令简介
 AWK是一种处理文本文件的语言，是一个强大的文本分析工具
 
 ### 语法
@@ -369,7 +368,7 @@ Bob    2415     40       57       62      159
 AVERAGE:     63.80    78.60    70.00
 ```
 -------------------------
-## awk 的if、循环和数组
+## awk的if、循环和数组
 ### 条件语句  
 awk 提供了非常好的类似于 C 语言的 if 语句。  
 ```
