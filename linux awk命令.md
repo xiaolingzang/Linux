@@ -370,7 +370,7 @@ AVERAGE:     63.80    78.60    70.00
 ```
 -------------------------
 ## awk 的if、循环和数组
-###条件语句
+### 条件语句  
 awk 提供了非常好的类似于 C 语言的 if 语句。  
 ```
 {
@@ -401,7 +401,8 @@ awk 提供了非常好的类似于 C 语言的 if 语句。
 ```
 ### 循环结构
 
-- for循环
+- for循环  
+
 awk 允许创建 for 循环，它就象 while 循环，也等同于 C 语言的 for 循环：
 ```
 for ( initial assignment; comparison; increment ) {
@@ -419,6 +420,7 @@ iteration3
 iteration4
 ```
 - while循环
+
 awk 的 while 循环结构，它等同于相应的 C 语言 while 循环。 awk 还有"do...while"循环，它在代码块结尾处对条件求值，而不像标准 while 循环那样在开始处求值。
 ```
 {
@@ -430,6 +432,7 @@ awk 的 while 循环结构，它等同于相应的 C 语言 while 循环。 awk 
 与一般的 while 循环不同，由于在代码块之后对条件求值， "do...while"循环永远都至少执行一次。换句话说，当第一次遇到普通 while 循环时，如果条件为假，将永远不执行该循环。
 
 - break 和 continue
+
 awk 提供了 break 和 continue 语句。使用这些语句可以更好地控制 awk 的循环结构
 ```
 #break 语句示例
