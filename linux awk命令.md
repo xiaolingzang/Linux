@@ -1,4 +1,5 @@
-#linux awk
+# linux awk
+
 
 - [linux awk命令简介](#linux awk命令简介)
 	- [语法](#语法)
@@ -56,6 +57,8 @@ awk [选项参数] -f scriptfile var=value file(s)
 
 - -W version or --version
 打印bug报告信息的版本。
+
+------------------------------
 
 ## 基本用法
 log.txt文本内容如下：  
@@ -151,6 +154,7 @@ awk -f {awk脚本} {文件名}
 ```
  $ awk -f cal.awk log.txt
 ```
+-----------------------------
 
 ## 运算符  
 | 运算符 | 描述 |
@@ -217,6 +221,8 @@ Are like
 a
 There orange,apple,mongo
 ```
+------------------------------
+
 ## 内建变量
 
 | 变量 | 描述 |
@@ -233,7 +239,7 @@ There orange,apple,mongo
 | FNR | 各文件分别计数的行号 |
 | **FS** | 字段分隔符(默认是任何空格) |
 | **IGNORECASE** | 如果为真，则进行忽略大小写的匹配 |
-|** NF** | 一条记录的字段的数目,就是有多少列 |
+|**NF** | 一条记录的字段的数目,就是有多少列 |
 | **NR** | 已经读出的记录数，就是行数，从1开始 |
 | OFMT | 数字的输出格式(默认值是%.6g) |
 | **OFS** | 输出字段分隔符（输出换行符），输出时用指定的符号代替换行符 |
@@ -302,7 +308,7 @@ $ awk 'BEGIN{IGNORECASE=1} /this/' log.txt
 2 this is a test
 This's a test
 ```
-
+--------------------------
 ## awk脚本
 
 关于awk脚本，我们需要注意两个关键词BEGIN和END。
@@ -362,6 +368,7 @@ Bob    2415     40       57       62      159
   TOTAL:       319      393      350
 AVERAGE:     63.80    78.60    70.00
 ```
+-------------------------
 ## awk 的if、循环和数组
 ###条件语句
 awk 提供了非常好的类似于 C 语言的 if 语句。  
@@ -453,7 +460,7 @@ while (1) {
 ```
 这段代码打印"iteration1"到"iteration21"， "iteration4"除外。如果迭代等于 4，则增加 x并调用 continue 语句，该语句立即使 awk 开始执行下一个循环迭代，而不执行代码块的其余部分。
 
-###数组
+### 数组
 
 - 定义
 
@@ -462,12 +469,14 @@ while (1) {
 Tarray[1]=“cheng mo”
 Tarray[2]=“800927”
 ```
+
 2:可以用字符串作数组索引(下标)
 ```
 Tarray[“first”]=“cheng ”
 Tarray[“last”]=”mo”
 Tarray[“birth”]=”800927”
 ```
+
 使用中 print Tarray[1] 将得到”cheng mo” 而 print Tarray[2] 和 print[“birth”] 都将得到 ”800927” 。
 
 - 数组相关函数
@@ -476,7 +485,8 @@ Tarray[“birth”]=”800927”
 #split进行分割字符串为数组，也会返回分割得到数组长度。
 $ awk 'BEGIN{info="it is a test";lens=split(info,tA," ");print lens;}'
 4 4
-	```
+```
+
 2. 输出数组内容(无序，有序输出）：
 ```
 $ awk 'BEGIN{info="it is a test";split(info,tA," ");for(k in tA){print k,tA[k];}}'
@@ -485,6 +495,7 @@ $ awk 'BEGIN{info="it is a test";split(info,tA," ");for(k in tA){print k,tA[k];}
 2 is
 3 a
 ```
+
 for…in 输出，因为数组是关联数组，默认是无序的。所以通过for…in 得到是无序的数组。如果需要得到有序数组，需要通过下标获得。
 ```
 $ awk 'BEGIN{info="it is a test";tlen=split(info,tA," ");for(k=1;k<=tlen;k++){print k,tA[k];}}' 
@@ -493,6 +504,7 @@ $ awk 'BEGIN{info="it is a test";tlen=split(info,tA," ");for(k=1;k<=tlen;k++){pr
 3 a
 4 test
 ```
+
 3. 判断键值存在以及删除键值  
 通过if(key in array) 通过这种方法判断数组中是否包含”key”键值。
 ```
@@ -505,9 +517,9 @@ delete array[key]可以删除，对应数组key的，序列值。
 $ awk 'BEGIN{tB["a"]="a1";tB["b"]="b1";delete tB["a"];for(k in tB){print k,tB[k];}}'                     
 b b1
 ```
+---------------------------
 
-##awk内置字符串函数
-
+## awk内置字符串函数  
 
 | 函数 | 功能 |
 | :------------| :--------------------------------------------------------------|
@@ -523,6 +535,7 @@ b b1
 | substr(s,p,n) | 返回字符串s中从p开始长度为n的后缀部分 |
 
 实例：
+
 ```
 #替换
 $ awk 'BEGIN{info="this is a test2010test!";gsub(/[0-9]+/,"!",info);print info}' 
@@ -544,7 +557,7 @@ awk 'BEGIN{info="this is a test";split(info,tA," ");print length(tA);for(k in tA
 2 is
 3 a
 ```
-
+----------------
 
 ## 另外一些实例
 
